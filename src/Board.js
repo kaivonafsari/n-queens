@@ -138,7 +138,9 @@
       var colIdx = majorDiagonalColumnIndexAtFirstRow;
 
       for (; rowIdx < n && colIdx < n; rowIdx++, colIdx++) {
-        count += this.get(rowIdx)[colIdx];
+        if ( colIdx >= 0 ) {
+          count += this.get(rowIdx)[colIdx];
+        }
       }
 
       return count > 1;
